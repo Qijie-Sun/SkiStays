@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Manage SkiGroup – SkiStays Euro</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <!-- Logo + Top‐nav -->
+  <div class="top-left-logo">SkiStays Euro</div>
+  <div class="top-nav">
+    <a href="{{ url_for('home',page=1) }}"    class="{% if view=='resorts'%}active{% endif %}">Resort</a> |
+    <a href="{{ url_for('hotels',page=1) }}"  class="{% if view=='hotels' %}active{% endif %}">Hotel</a> |
+    <a href="{{ url_for('airbnb_list',page=1) }}" class="{% if view=='airbnb' %}active{% endif %}">Airbnb</a> |
+    <a href="{{ url_for('skigroup') }}"       class="{% if view=='skigroup' %}active{% endif %}">SkiGroup</a>
+  </div>
+<div class="top-right">
+  {% if is_logged_in %}
+    <span class="user-name">{{ user_name }}</span>
+    <a href="{{ url_for('logout') }}" class="logout-button">Logout</a>
+  {% else %}
+    <a href="{{ url_for('sign_in') }}" class="button">Sign In</a>
+    <a href="{{ url_for('sign_up') }}" class="button">Sign Up</a>
+  {% endif %}
+</div>
+
+  <hr class="custom-hr">
+
+  <!-- Sub‐nav -->
+  <div class="navigation">
+    <a href="{{ url_for('skigroup_manage') }}" class="{% if skiview=='manage'  %}active{% endif %}">Create & Join</a> |
+    <a href="{{ url_for('skigroup_created') }}" class="{% if skiview=='created' %}active{% endif %}">My Created Group</a> |
+    <a href="{{ url_for('skigroup_joined') }}" class="{% if skiview=='joined'  %}active{% endif %}">My Joined Groups</a>
+  </div>
+
+  <!-- Two‐column layout -->
+  <div style="display:flex; gap:2rem; margin:2rem;">
+    <!-- CREATE BOX -->
+    <div class="box">
+      <h3>Create a SkiGroup</h3>
+      {% if msg_create %}<p class="success">{{ msg_create }}</p>{% endif %}
+      {% if err_create %}<p class="error">{{ err_create }}</p>{% endif %}
+      <form method="post">
+        <input
+          type="text"
+          name="create_group_name"
+          placeholder="New group name"
+          class="group-input"
+          required
+        >
+        <button type="submit" class="button">Create</button>
+      </form>
+    </div>
+
+    <!-- JOIN BOX -->
+    <div class="box">
+      <h3>Join a SkiGroup</h3>
+      {% if msg_join %}<p class="success">{{ msg_join }}</p>{% endif %}
+      {% if err_join %}<p class="error">{{ err_join }}</p>{% endif %}
+      <form method="post">
+        <input
+          type="text"
+          name="join_group_id"
+          placeholder="Enter Group ID"
+          class="group-input"
+          required
+        >
+        <button type="submit" class="button">Join</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Created SkiGroups – SkiStays Euro</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="top-left-logo">SkiStays Euro</div>
+  <div class="top-nav">
+    <a href="{{ url_for('home',page=1) }}"   class="{% if view=='resorts'%}active{% endif %}">Resort</a> |
+    <a href="{{ url_for('hotels',page=1) }}" class="{% if view=='hotels'%}active{% endif %}">Hotel</a> |
+    <a href="{{ url_for('airbnb_list',page=1) }}" class="{% if view=='airbnb'%}active{% endif %}">Airbnb</a> |
+    <a href="{{ url_for('skigroup') }}"      class="{% if view=='skigroup'%}active{% endif %}">SkiGroup</a>
+  </div>
+  <div class="top-right">
+    <span class="user-name">{{ user_name }}</span>
+    <a href="{{ url_for('logout') }}" class="logout-button">Logout</a>
+  </div>
+  <hr class="custom-hr">
+
+  <div class="navigation">
+    <a href="{{ url_for('skigroup_manage') }}" class="{% if skiview=='manage'%}active{% endif %}">Create & Join</a> |
+    <a href="{{ url_for('skigroup_created') }}" class="{% if skiview=='created'%}active{% endif %}">My Created Groups</a> |
+    <a href="{{ url_for('skigroup_joined') }}" class="{% if skiview=='joined'%}active{% endif %}">My Joined Groups</a>
+  </div>
+
+  {% if err %}<p class="error">{{ err }}</p>{% endif %}
+  {% if msg %}<p class="success">{{ msg }}</p>{% endif %}
+
+  <h2>Groups You’ve Created</h2>
+  {% if not groups %}
+    <p>You haven’t created any SkiGroup yet.</p>
+  {% else %}
+    {% for g in groups %}
+      <div class="group-section">
+        <h3>
+          {{ g.group_name }} (ID #{{ g.group_id }})
+          – created on {{ g.creation_date.strftime('%Y-%m-%d') }}
+        </h3>
+        <!-- delete entire group -->
+        <form method="post" style="display:inline;">
+          <input type="hidden" name="delete_group_id" value="{{ g.group_id }}">
+          <button type="submit">Delete Group</button>
+        </form>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Member</th>
+              <th>Fav Resort</th>
+              <th>Fav Hotel</th>
+              <th>Fav Airbnb</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for m in members_by_group[g.group_id] %}
+            <tr>
+              <td>
+                {{ m.user_name }}
+                {% if m.user_id == session['user_id'] %}(you){% endif %}
+              </td>
+              <td>{{ m.fav_resort or '–' }}</td>
+              <td>{{ m.fav_hotel  or '–' }}</td>
+              <td>{{ m.fav_airbnb or '–' }}</td>
+              <td>
+                {% if m.user_id != session['user_id'] %}
+                  <form method="post" style="display:inline;">
+                    <input type="hidden" name="remove_member_group" value="{{ g.group_id }}">
+                    <input type="hidden" name="remove_member_user"  value="{{ m.user_id }}">
+                    <button type="submit">Remove</button>
+                  </form>
+                {% else %}
+                  &mdash;
+                {% endif %}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% endfor %}
+  {% endif %}
+</body>
+</html>

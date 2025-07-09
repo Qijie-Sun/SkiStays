@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Search Results – SkiStays Euro</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="top-left-logo">SkiStays Euro</div>
+  <div class="top-nav">
+    <a href="{{ url_for('home',page=1) }}" class="{% if view=='resorts' %}active{% endif %}">Resort</a> |
+    <a href="{{ url_for('hotels',page=1) }}" class="{% if view=='hotels'  %}active{% endif %}">Hotel</a> |
+    <a href="{{ url_for('airbnb_list',page=1) }}" class="{% if view=='airbnb'%}active{% endif %}">Airbnb</a> |
+    <a href="{{ url_for('skigroup') }}" class="{% if view=='skigroup'%}active{% endif %}">SkiGroup</a>
+  </div>
+  <div class="top-right">
+    <span class="user-name">{{ user_name }}</span>
+    <a href="{{ url_for('logout') }}" class="logout-button">Logout</a>
+  </div>
+
+  <hr class="custom-hr">
+
+  <div class="navigation">
+    <a href="{{ url_for('home',page=1) }}">Home</a> |
+    <a href="{{ url_for('price_comparison',page=1) }}">Price Comparison</a> |
+    <a href="{{ url_for('popular_resorts',page=1) }}">Popular Resorts</a>
+  </div>
+
+  <div class="search-container">
+    <form action="{{ url_for('search') }}" method="GET">
+      <input
+        type="text"
+        name="query"
+        placeholder="Search by ID, name, or country"
+        value="{{ query or '' }}"
+      >
+      <button type="submit">Search</button>
+    </form>
+  </div>
+
+  <h2 style="text-align:center;">Search Results for “{{ query }}”</h2>
+
+  {% if resorts %}
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Highest</th>
+          <th>Lowest</th>
+          <th>Difficulty</th>
+          <th>Slope</th>
+          <th>Lifts</th>
+          <th>Favorite?</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for r in resorts %}
+        <tr>
+          <td>{{ r.resort_id }}</td>
+          <td>{{ r.resort_name }}</td>
+          <td>{{ r.location }}</td>
+          <td>{{ r.highest_point }}</td>
+          <td>{{ r.lowest_point }}</td>
+          <td>{{ r.difficult_slope }}</td>
+          <td>{{ r.total_slope }}</td>
+          <td>{{ r.total_lifts }}</td>
+          <td>
+            <form action="{{ url_for('toggle_favorite', resort_id=r.resort_id) }}"
+                  method="POST" style="display:inline;">
+              <button type="submit" class="favorite-button">
+                {% if r.resort_id == user_fav_resort %}
+                  ❤️
+                {% else %}
+                  🤍
+                {% endif %}
+              </button>
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <div class="pagination" style="text-align:center; margin:20px;">
+      <a href="{{ url_for('search', query=query, page=1) }}">« First</a>
+      {% if page>1 %}
+        <a href="{{ url_for('search', query=query, page=page-1) }}">‹ Prev</a>
+      {% endif %}
+      <span>Page {{ page }} of {{ total_pages }}</span>
+      {% if page<total_pages %}
+        <a href="{{ url_for('search', query=query, page=page+1) }}">Next ›</a>
+      {% endif %}
+      <a href="{{ url_for('search', query=query, page=total_pages) }}">Last »</a>
+      <form method="GET" action="{{ url_for('search') }}"
+            style="display:inline-block; margin-left:1em;">
+        <input type="hidden" name="query" value="{{ query }}">
+        <input type="number" name="page"
+               min="1" max="{{ total_pages }}" value="{{ page }}"
+               style="width:3em;">
+        <button type="submit">Go</button>
+      </form>
+    </div>
+  {% else %}
+    <div class="no-results">No results found for “{{ query }}”.</div>
+  {% endif %}
+</body>
+</html>

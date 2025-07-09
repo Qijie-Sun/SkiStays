@@ -1,0 +1,263 @@
+body {
+    font-family: Arial;
+}
+
+/* line at top of page */
+.custom-hr {
+    border: none;
+    height: 1px;
+    left: 0;
+    right: 0;
+    background: #b7b7b7;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 70px;
+    margin: 0;
+}
+
+/* for search/navigation */
+.navigation {
+    text-align: center;
+    margin-top: 85px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.navigation a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 5px 10px;
+}
+
+.navigation a:hover {
+    color: #4592ea;
+}
+
+.navigation a.active {
+    font-weight: bold;
+    color: #4592ea;
+    border-bottom: 2px solid #4592ea;
+}
+
+/* no-results */
+.no-results {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 18px;
+    color: #666;
+}
+
+/* price‐comparison only: right-align the two numeric columns */
+.price-comparison td:nth-child(2),
+.price-comparison td:nth-child(3) {
+    text-align: right;
+}
+
+/* header row background */
+thead tr {
+    background-color: #f2f2f2;
+}
+
+/* row hover */
+tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* logo */
+.top-left-logo {
+    position: absolute;
+    top: 6px;
+    left: 10px;
+    font-style: italic;
+    font-size: 32px;
+    font-weight: bold;
+    color: transparent;
+    background: linear-gradient(to right, rgb(53, 134, 241), white);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-stroke: 1.5px black;
+    padding: 10px 10px;
+}
+
+.top-right {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    gap: 15px;
+    display: flex;
+}
+
+/* main search bar */
+.search-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 18px;
+    margin-bottom: 10px;
+}
+
+.search-container input[type="text"] {
+    width: 300px;
+    padding: 8px;
+    font-size: 14px;
+}
+
+/* search button */
+.search-container button {
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+    background-color: #4592ea;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+}
+
+/* generic button */
+.button {
+    display: inline-block;
+    background-color: #4592ea;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* display username */
+.user-name {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    padding: 2px 5px;
+    color: #000;
+}
+
+/* logout button */
+.logout-button {
+    position: absolute;
+    top: 35px;
+    right: 10px;
+    color: #7d7d7d;
+    padding: 2px 5px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* login page background */
+.login-page {
+    background: linear-gradient(white 0, white 71px, transparent 71px),
+                url('/static/images/login_background.jpg');
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover;
+    background-attachment: scroll, fixed;
+    background-position: 50% 45%;
+    display: flex;
+}
+
+/* sign-in/up box */
+.form-container {
+    width: 300px;
+    margin: 22vh auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="password"] {
+    width: 75%;
+    height: 30px;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+/* error message */
+.error-message {
+    color: #b60d0d;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* resort tables */
+table {
+    border-collapse: collapse;
+    width: 70%;
+    margin: auto;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+/* ─── Top-Level “Resort | Hotel” nav ─── */
+.top-nav {
+    position: absolute;
+    top: 24px;              /* align with your logo text */
+    left: 260px;            /* adjust to sit right of the logo */
+    font-size: 16px;
+  }
+  
+  .top-nav a {
+    color: #000;            /* black by default */
+    text-decoration: none;
+    margin: 0 10px;
+    padding-bottom: 2px;
+  }
+  
+  .top-nav a.active {
+    color: #4592ea;         /* same blue as your buttons */
+    border-bottom: 2px solid #4592ea;
+  }
+
+  .hotel-search {
+    margin-top: 80px;    /* tweak this value until it sits nicely below Resort|Hotel */
+    margin-bottom: 10px;
+}
+
+/* make create/join inputs match button height & style */
+.group-input {
+    height: 42px;           /* match roughly your .button height */
+    font-size: 16px;        /* same text size as button */
+    padding: 0 12px;        /* horizontal padding */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 8px;      /* small gap before the button */
+}
+
+/* ensure buttons in these boxes stay aligned */
+.box .button {
+    height: 42px;
+    padding: 0 20px;        /* override vertical padding */
+}
+
+/* container box for create/join forms */
+.box {
+    flex: 1;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+  }
+  
+  /* the taller input matching your button */
+  .group-input {
+    height: 42px;
+    font-size: 16px;
+    padding: 0 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 8px;
+  }

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Required – SkiStays Euro</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="top-left-logo">SkiStays Euro</div>
+  <hr class="custom-hr">
+  <div class="form-container" style="text-align:center;">
+    <p>You must <a href="{{ url_for('sign_in') }}">sign in</a> to use SkiGroup.</p>
+  </div>
+</body>
+</html>

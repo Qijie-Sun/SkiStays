@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign In – SkiStays Euro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="login-page">
+    <div class="top-left-logo">SkiStays Euro</div>
+    <a href="{{ url_for('home') }}" class="button top-right">Back to Home</a>
+    <hr class="custom-hr">
+
+    <div class="form-container">
+        <form method="POST">
+            <label>Username:</label><br>
+            <input type="text" name="user_name" required><br><br>
+
+            <label>Password:</label><br>
+            <input type="password" name="password" required><br><br>
+
+            {% if error %}
+            <div class="error-message">{{ error }}</div>
+            {% endif %}
+
+            <button type="submit" class="button">Sign In</button>
+        </form>
+    </div>
+</body>
+</html>
