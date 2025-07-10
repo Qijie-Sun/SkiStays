@@ -9,10 +9,12 @@ detailed information of lodging options and create/share preferences as a group.
 The primary way users interact with the application is through evaluating a series of ski resorts
 recommended by the system. Users can first search for ski resorts near a certain location. They
 can then use filters so the algorithm refines the recommendations based on their preferences. For
-each recommended ski resort, users can indicate whether they are not interested, somewhat
-interested, or very interested/planning to visit. Additionally, the application allows multiple
-user’s interaction by enabling users to create a ski group to share their desired ski resort, hotel or
-Airbnb.
+each ski resort, users can also favorite it and their preferred lodging option(s). Additionally, 
+the application allows multi-user interaction by enabling users to create a ski group to share 
+their desired ski resort, hotel or Airbnb.
+
+## Requirements
+- Python 3.10+
 
 ## Potential Updates
 - Google Maps API integration to show locations and distances
