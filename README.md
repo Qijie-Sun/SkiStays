@@ -13,7 +13,7 @@ the application allows multi-user interaction by enabling users to create a ski 
 their desired ski resort, hotel or Airbnb.
 
 ## Database Design
-![UML](https://github.com/Qijie-Sun/SkiStays/blob/main/static/images/SkiUML.png)
+![UML](https://github.com/Qijie-Sun/SkiStays/blob/main/static/images/UML.png)
 
 One of the main objectives of this project was to implement CRUD operations. We did so based on the
 database illustrated by the UML diagram above.
