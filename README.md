@@ -22,6 +22,7 @@ database illustrated by the UML diagram above.
 ## Potential Updates
 - Google Maps API integration to show locations and distances
 - Side by side comparison for lodging options in addition to price comparison
+- Images for each resort/lodging option
 
 ## Contributors
 - Qijie Sun
