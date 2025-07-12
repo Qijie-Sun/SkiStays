@@ -18,7 +18,7 @@ body {
 /* for search/navigation */
 .navigation {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 25px;
     margin-bottom: 15px;
     font-size: 16px;
 }
@@ -276,6 +276,7 @@ th, td {
   /* Overlay text */
   .hero-text {
     position: absolute;
+    max-width: 500px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
