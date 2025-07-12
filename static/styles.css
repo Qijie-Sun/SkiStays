@@ -18,7 +18,7 @@ body {
 /* for search/navigation */
 .navigation {
     text-align: center;
-    margin-top: 85px;
+    margin-top: 30px;
     margin-bottom: 15px;
     font-size: 16px;
 }
@@ -259,4 +259,33 @@ th, td {
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-right: 8px;
+  }
+
+  /* Hero banner container */
+.hero-banner {
+    background-image: url('/static/images/homepage_background.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center 25%;
+    height: 300px;
+    position: relative;
+    margin-top: 80px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  /* Overlay text */
+  .hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-shadow: 
+    1px 1px 2px rgba(0, 0, 0, 0.7),
+    -1px -1px 2px rgba(0, 0, 0, 0.7),
+    1px -1px 2px rgba(0, 0, 0, 0.7),
+    -1px 1px 2px rgba(0, 0, 0, 0.7);
+    text-align: center;
   }
