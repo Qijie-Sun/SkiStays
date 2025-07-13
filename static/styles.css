@@ -161,7 +161,9 @@ tbody tr:hover {
 /* sign-in/up box */
 .form-container {
     width: 300px;
-    margin: 22vh auto;
+    position: relative;
+    top: 28vh;
+    margin: 0 auto;
     padding: 20px;
     border: 1px solid #ccc;
     background-color: #fff;
