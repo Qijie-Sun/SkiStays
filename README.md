@@ -6,6 +6,7 @@ Users are also able to favorite lodging options and share their preferences in g
 
 ## Features
 ![Homepage](https://github.com/Qijie-Sun/SkiStays/blob/main/static/images/homepage.png)
+
 ![Login](https://github.com/Qijie-Sun/SkiStays/blob/main/static/images/login.png)
 
 - List of resort and nearby hotels/Airbnbs
