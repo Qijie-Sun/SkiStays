@@ -5,6 +5,9 @@ Europe and find nearby lodging options. The available options will include hotel
 Users are also able to favorite lodging options and share their preferences in groups.
 
 ## Features
+![Homepage](https://github.com/Qijie-Sun/SkiStays/blob/main/static/images/homepage.png)
+![Login](https://github.com/Qijie-Sun/SkiStays/blob/main/static/images/login.png)
+
 - List of resort and nearby hotels/Airbnbs
 - Login system for favoriting places or creating/joining groups
 - Price comparison of average hotel and Airbnb prices of different resorts
