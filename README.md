@@ -1,5 +1,5 @@
 # SkiStays
-This project aims to develop SkiStays Euro, a web-based application for skiers in Europe.
+SkiStays Euro is a web-based application designed for skiers in Europe.
 Using SkiStays Euro, users will be able to view the specifications of various ski resorts in 
 Europe and find nearby lodging options. The available options will include hotels and Airbnbs. 
 Users are also able to favorite lodging options and share their preferences in groups.
