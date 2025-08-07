@@ -1,7 +1,7 @@
 # SkiStays
 SkiStays Euro is a web-based application designed for skiers in Europe.
-Using SkiStays Euro, users will be able to view the specifications of various ski resorts in 
-Europe and find nearby lodging options. The available options will include hotels and Airbnbs. 
+Using SkiStays Euro, users will be able to view specifications of various ski resorts in 
+Europe and find nearby lodging options including hotels and Airbnbs. 
 Users are also able to favorite lodging options and share their preferences in groups.
 
 ## Features
@@ -25,7 +25,7 @@ database illustrated by the UML diagram above.
 
 ## Potential Updates
 - Google Maps API integration to show locations and distances
-- Side by side comparison for lodging options in addition to price comparison
+- Side by side comparison for lodging options
 - Images for each resort/lodging option
 
 ## Contributors
