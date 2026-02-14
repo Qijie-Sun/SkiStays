@@ -1,7 +1,7 @@
 # SkiStays
 SkiStays Euro is a web-based application designed for skiers in Europe.
-Using SkiStays Euro, users will be able to view the specifications of various ski resorts in 
-Europe and find nearby lodging options. The available options will include hotels and Airbnbs. 
+Using SkiStays Euro, users will be able to view specifications of various ski resorts in 
+Europe and find nearby lodging options including hotels and Airbnbs. 
 Users are also able to favorite lodging options and share their preferences in groups.
 
 ## Features
@@ -14,18 +14,12 @@ Users are also able to favorite lodging options and share their preferences in g
 - Price comparison of average hotel and Airbnb prices of different resorts
 - Display of the most popular resorts based on favorites
 
-## Database Design
-![UML](https://github.com/Qijie-Sun/SkiStays/blob/main/static/images/UML.png)
-
-One of the main objectives of this project was to implement CRUD operations. We did so based on the
-database illustrated by the UML diagram above.
-
 ## Requirements
 - Python 3.10+
 
 ## Potential Updates
 - Google Maps API integration to show locations and distances
-- Side by side comparison for lodging options in addition to price comparison
+- Side by side comparison for lodging options
 - Images for each resort/lodging option
 
 ## Contributors
