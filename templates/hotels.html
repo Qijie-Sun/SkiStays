@@ -5,18 +5,13 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-  <!-- logo -->
   <div class="top-left-logo">SkiStays Euro</div>
 
   <div class="top-nav">
-    <a href="{{ url_for('home', page=1) }}"
-       class="{% if view=='resorts' %}active{% endif %}">Resort</a> |
-    <a href="{{ url_for('hotels', page=1) }}"
-       class="{% if view=='hotels' %}active{% endif %}">Hotel</a> |
-    <a href="{{ url_for('airbnb_list', page=1) }}"
-       class="{% if view=='airbnb' %}active{% endif %}">Airbnb</a> |
-    <a href="{{ url_for('skigroup') }}"
-       class="{% if view=='skigroup' %}active{% endif %}">SkiGroup</a>
+    <a href="{{ url_for('home',page=1) }}" class="{% if view=='resorts' %}active{% endif %}">Resort</a> |
+    <a href="{{ url_for('hotels',page=1)  }}" class="{% if view=='hotels'  %}active{% endif %}">Hotel</a> |
+    <a href="{{ url_for('airbnb_list',page=1) }}" class="{% if view=='airbnb'%}active{% endif %}">Airbnb</a> |
+    <a href="{{ url_for('skigroup') }}" class="{% if view=='skigroup'%}active{% endif %}">SkiGroup</a>
   </div>
 
   <div class="top-right">

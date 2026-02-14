@@ -195,53 +195,53 @@ table {
     border-collapse: collapse;
     width: 70%;
     margin: auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 th, td {
-    border: 1px solid #ccc;
     padding: 20px;
     text-align: left;
 }
 
-/* ─── Top-Level “Resort | Hotel” nav ─── */
+/* top-Level nav */
 .top-nav {
     position: absolute;
-    top: 24px;              /* align with your logo text */
-    left: 260px;            /* adjust to sit right of the logo */
+    top: 24px;
+    left: 260px;
     font-size: 16px;
   }
   
   .top-nav a {
-    color: #000;            /* black by default */
+    color: #000;
     text-decoration: none;
     margin: 0 10px;
     padding-bottom: 2px;
   }
   
   .top-nav a.active {
-    color: #4592ea;         /* same blue as your buttons */
+    color: #4592ea;
     border-bottom: 2px solid #4592ea;
   }
 
   .hotel-search {
-    margin-top: 80px;    /* tweak this value until it sits nicely below Resort|Hotel */
+    margin-top: 80px;
     margin-bottom: 10px;
 }
 
 /* make create/join inputs match button height & style */
 .group-input {
-    height: 42px;           /* match roughly your .button height */
-    font-size: 16px;        /* same text size as button */
-    padding: 0 12px;        /* horizontal padding */
+    height: 42px;
+    font-size: 16px;
+    padding: 0 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    margin-right: 8px;      /* small gap before the button */
+    margin-right: 8px;
 }
 
 /* ensure buttons in these boxes stay aligned */
 .box .button {
     height: 42px;
-    padding: 0 20px;        /* override vertical padding */
+    padding: 0 20px;
 }
 
 /* container box for create/join forms */
@@ -263,9 +263,9 @@ th, td {
     margin-right: 8px;
   }
 
-  /* Hero banner container */
+  /* hero banner container */
 .hero-banner {
-    background-image: url('/static/images/homepage_background.jpg'); /* Replace with your image path */
+    background-image: url('/static/images/homepage_background.jpg');
     background-size: cover;
     background-position: center 25%;
     height: 300px;
@@ -275,7 +275,7 @@ th, td {
     overflow: hidden;
   }
   
-  /* Overlay text */
+  /* overlay text */
   .hero-text {
     position: absolute;
     max-width: 500px;
